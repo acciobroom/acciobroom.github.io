@@ -19,14 +19,11 @@ const IndexPage = () => (
             <span className="text-primary">{config.lastName}</span>
           </h1>
           <div className="subheading mb-5">
-            {config.address} · {config.phone} ·
+            {config.address} · 
             <a href={`mailto:${config.email}`}>{config.email}</a>
           </div>
           <p className="lead mb-5">
-            I am experienced in leveraging agile frameworks to provide a robust
-            synopsis for high level overviews. Iterative approaches to corporate
-            strategy foster collaborative thinking to further the overall value
-            proposition.
+            {/* come back to me */}
           </p>
           <div className="social-icons">
             {config.socialLinks.map(social => {
@@ -43,10 +40,10 @@ const IndexPage = () => (
 
       <hr className="m-0" />
 
+            {/*}
       <section
         className="resume-section p-3 p-lg-5 d-flex justify-content-center"
-        id="experience"
-      >
+        id="experience">
         <div className="w-100">
           <h2 className="mb-5">Experience</h2>
 
@@ -119,6 +116,7 @@ const IndexPage = () => (
           </div>
         </div>
       </section>
+            {*/}
 
       <hr className="m-0" />
 
@@ -131,35 +129,48 @@ const IndexPage = () => (
 
           <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
             <div className="resume-content">
-              <h3 className="mb-0">University of Colorado Boulder</h3>
-              <div className="subheading mb-3">Bachelor of Science</div>
-              <div>Computer Science - Web Development Track</div>
-              <p>GPA: 3.23</p>
+              <h3 className="mb-0">University of Central Florida</h3>
+              <div className="subheading mb-3">Doctor of Philosophy</div>
+              <div>Statistics - Big Data Analytics</div>
             </div>
             <div className="resume-date text-md-right">
-              <span className="text-primary">August 2006 - May 2010</span>
+              <span className="text-primary">August 2018 - May 2022</span>
             </div>
           </div>
 
-          <div className="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
             <div className="resume-content">
-              <h3 className="mb-0">James Buchanan High School</h3>
-              <div className="subheading mb-3">Technology Magnet Program</div>
-              <p>GPA: 3.56</p>
+              <h3 className="mb-0">University of Minnesota - Duluth</h3>
+              <div className="subheading mb-3">Master of Science</div>
+              <div>Computational and Applied Mathematics</div>
+              <div>Minor - Electrical Engineering</div>
             </div>
             <div className="resume-date text-md-right">
-              <span className="text-primary">August 2002 - May 2006</span>
+              <span className="text-primary">August 2014 - May 2016</span>
             </div>
           </div>
+
+          <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div className="resume-content">
+              <h3 className="mb-0">Michigan State University</h3>
+              <div className="subheading mb-3">Bachelor of Science</div>
+              <div>Computational and Applied Mathematics - Honors College</div>
+              <div>Actuarial Science</div>
+            </div>
+            <div className="resume-date text-md-right">
+              <span className="text-primary">August 2010 - May 2014</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
       <hr className="m-0" />
 
+            {/*}
       <section
         className="resume-section p-3 p-lg-5 d-flex align-items-center"
-        id="skills"
-      >
+        id="skills">
         <div className="w-100">
           <h2 className="mb-5">Skills</h2>
 
@@ -168,10 +179,10 @@ const IndexPage = () => (
           </div>
           <ul className="list-inline dev-icons">
             <li className="list-inline-item">
-              <i className="fab fa-html5"></i>
+              <i className="fab fa-python"></i>
             </li>
             <li className="list-inline-item">
-              <i className="fab fa-css3-alt"></i>
+              <i className="devicon-mysql-plain"></i>
             </li>
             <li className="list-inline-item">
               <i className="fab fa-js-square"></i>
@@ -226,7 +237,7 @@ const IndexPage = () => (
           </ul>
         </div>
       </section>
-
+            {*/}
       <hr className="m-0" />
 
       <section
@@ -236,27 +247,20 @@ const IndexPage = () => (
         <div className="w-100">
           <h2 className="mb-5">Interests</h2>
           <p>
-            Apart from being a web developer, I enjoy most of my time being
-            outdoors. In the winter, I am an avid skier and novice ice climber.
-            During the warmer months here in Colorado, I enjoy mountain biking,
-            free climbing, and kayaking.
+            {/* come back to me */}
           </p>
           <p className="mb-0">
-            When forced indoors, I follow a number of sci-fi and fantasy genre
-            movies and television shows, I am an aspiring chef, and I spend a
-            large amount of my free time exploring the latest technology
-            advancements in the front-end web development world.
+            {/* come back to me */}
           </p>
         </div>
       </section>
 
       <hr className="m-0" />
 
-      <section
+{/*}      <section
         className="resume-section p-3 p-lg-5 d-flex align-items-center"
-        id="awards"
-      >
-        <div className="w-100">
+        id="awards">
+         <div className="w-100">
           <h2 className="mb-5">Awards &amp; Certifications</h2>
           <ul className="fa-ul mb-0">
             <li>
@@ -291,8 +295,8 @@ const IndexPage = () => (
               Place - James Buchanan High School - Hackathon 2005
             </li>
           </ul>
-        </div>
-      </section>
+        </div> 
+      </section> {*/}
     </div>
   </Layout>
 );
