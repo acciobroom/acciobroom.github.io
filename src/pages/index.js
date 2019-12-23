@@ -5,6 +5,8 @@ import Layout from '../components/Layout';
 import { Link } from 'gatsby';
 import Sidebar from '../components/Sidebar';
 import config from '../../config';
+import Projects from '../components/Projects';
+
 const IndexPage = () => (
   <Layout>
     <Sidebar />
@@ -40,6 +42,9 @@ const IndexPage = () => (
 
       <hr className="m-0" />
 
+      <section id="experience">
+        <Projects />
+      </section>
             {/*}
       <section
         className="resume-section p-3 p-lg-5 d-flex justify-content-center"
