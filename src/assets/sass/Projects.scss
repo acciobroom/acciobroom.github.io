@@ -1,0 +1,13 @@
+.container {
+    border: thin solid;
+    .row {
+        border: solid thin;
+        .col {
+            border: solid thin;
+        }
+    }
+}
+
+#highlight {
+    border: thick;
+}
