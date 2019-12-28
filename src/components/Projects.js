@@ -9,12 +9,16 @@ class Projects extends Component {
             highlight: null,
         };
     }
+    renderSquare(i) {
+        return <Square />;
+    }
+
     render() {
         return (
             <div>
               <div class="container">
                   <div class="row">
-                      <div class="col-3">Col 1 of 2</div>
+                      <div class="col-3">{this.renderSquare(0)}</div>
                       <div class="col-6">Col 2 of 2</div>
                   </div>
                   <div class="row">
@@ -34,6 +38,14 @@ class Projects extends Component {
         )
     }
 
+}
+
+function Square(props) {
+    return (
+        <div>
+            Hello gg {props.value}
+        </div>
+    );
 }
 
 export default Projects;
