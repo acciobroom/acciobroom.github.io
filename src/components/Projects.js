@@ -12,6 +12,7 @@ function Highlight(props) {
     return(
         <div>
             {props.value}
+          {r}
         </div>
     );
 }
@@ -32,13 +33,20 @@ class Projects extends Component {
         };
     }
 
+
     render() {
+      let test;
+      if (this.state.value == 2) {
+        test = "Hello Guys"
+      } else {
+        test = "Not Numbers 2"
+      }
         return (
             <div>
               <div class="container">
                   <div class="row">
                       <div class="col-3"><Highlight value={this.state.value}/></div>
-                      <div class="col-6"><Listing value={this.state.value}/></div>
+                      <div class="col-6"><Listing value={this.state.value} />{test}</div>
                   </div>
                   <div class="row">
                       <div class="col">
