@@ -9,20 +9,75 @@ import lang4Logo from '../assets/images/SAS_logo.svg';
 
 
 function Highlight(props) {
-    const r = "I need an icon";
+    let highLogo;
+    if (props.value == 1) {
+        highLogo = lang1Logo;
+    } else  if (props.value == 2) { 
+        highLogo = lang2Logo;
+    } else if (props.value == 3) {
+        highLogo = lang3Logo;
+    } else {
+        highLogo = lang4Logo;
+    }
     return(
         <div>
-            {props.value}
-          {r}
+          <img class="langLogo" src={highLogo} alt="Language Logo"></img>
         </div>
     );
 }
 
 function Listing(props) {
-    const r = "Hello R Listing";
+    const rLang = [
+        {
+            link: 'https://www.google.com',
+            desc: "Goomba"
+        },
+        {
+            link: 'https://www.github.com',
+            desc: "Kool-aid"
+        }
+    ];
+    const sasLang = [
+        {
+            link: 'saslink',
+            desc: 'sas description'
+        }
+    ];
+    const pythonLang = [
+        {
+            link: 'python link',
+            desc: 'python desc'
+        },
+        {
+            link: 'python link 2',
+            desc: 'python desc 2'
+        }
+    ];
+    const mysqlLang = [
+        {
+            link: 'sql link 1',
+            desc: 'sql link2'
+        }
+    ]
+    let lang;
+    if (props.value == 1) {
+        lang = rLang;
+    } else  if (props.value == 2) {
+        lang = pythonLang;
+    } else if (props.value == 3) {
+        lang = mysqlLang;
+    } else {
+        lang = sasLang;
+    }
     return (
         <div>
-            {props.value}
+        <ul>
+            {lang.map((value, index) => {
+                return <div>
+                <li key={index}><a href={value.link} target="_blank">{value.desc}</a></li>
+                </div>
+            })}
+        </ul>
         </div>
     );
 }
@@ -36,18 +91,12 @@ class Projects extends Component {
 
 
     render() {
-      let test;
-      if (this.state.value == 2) {
-        test = "Hello Guys"
-      } else {
-        test = "Not Numbers 2"
-      }
         return (
             <div>
               <div class="container">
                   <div class="row">
                       <div class="col-3"><Highlight value={this.state.value}/></div>
-                      <div class="col-6"><Listing value={this.state.value} />{test}</div>
+                      <div class="col-6"><Listing value={this.state.value}/></div>
                   </div>
                   <div class="row">
                       <div class="col">
@@ -79,5 +128,6 @@ class Projects extends Component {
     }
 
 }
+
 
 export default Projects;
