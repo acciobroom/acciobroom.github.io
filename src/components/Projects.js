@@ -5,6 +5,12 @@ import lang1Logo from '../assets/images/Rlogo.svg';
 import lang2Logo from '../assets/images/Python-logo.svg';
 import lang3Logo from '../assets/images/mysql-logo.png';
 import lang4Logo from '../assets/images/SAS_logo.svg';
+import lang5Logo from '../assets/images/tableau-logo.png';
+import {rLang} from './Project-Consts';
+import {sasLang} from './Project-Consts';
+import {mysqlLang} from './Project-Consts';
+import {pythonLang} from './Project-Consts';
+import {tableauLang} from './Project-Consts';
 
 
 
@@ -16,8 +22,10 @@ function Highlight(props) {
         highLogo = lang2Logo;
     } else if (props.value == 3) {
         highLogo = lang3Logo;
-    } else {
+    } else if (props.value == 4) {
         highLogo = lang4Logo;
+    } else {
+        highLogo = lang5Logo;
     }
     return(
         <div>
@@ -27,38 +35,6 @@ function Highlight(props) {
 }
 
 function Listing(props) {
-    const rLang = [
-        {
-            link: 'https://www.google.com',
-            desc: "Goomba"
-        },
-        {
-            link: 'https://www.github.com',
-            desc: "Kool-aid"
-        }
-    ];
-    const sasLang = [
-        {
-            link: 'saslink',
-            desc: 'sas description'
-        }
-    ];
-    const pythonLang = [
-        {
-            link: 'python link',
-            desc: 'python desc'
-        },
-        {
-            link: 'python link 2',
-            desc: 'python desc 2'
-        }
-    ];
-    const mysqlLang = [
-        {
-            link: 'sql link 1',
-            desc: 'sql link2'
-        }
-    ]
     let lang;
     if (props.value == 1) {
         lang = rLang;
@@ -66,9 +42,12 @@ function Listing(props) {
         lang = pythonLang;
     } else if (props.value == 3) {
         lang = mysqlLang;
-    } else {
+    } else if (props.value == 4) {
         lang = sasLang;
+    } else {
+        lang = tableauLang;
     }
+
     return (
         <div>
         <ul>
@@ -121,6 +100,11 @@ class Projects extends Component {
                             <img class="langLogo" src={lang4Logo} alt="SAS Logo"></img>
                         </button>
                     </div>
+                        <div class="col">
+                            <button onClick={() => this.setState({ value: 5 })}>
+                                <img class="langLogo" src={lang5Logo} alt="Tableau Logo"></img>
+                            </button>
+                        </div>
                   </div>
               </div>
             </div>
