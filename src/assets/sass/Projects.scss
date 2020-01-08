@@ -1,3 +1,8 @@
+.hightlight {
+    visibility: hidden;
+}
+
+
 .container {
     border: thin solid;
 
@@ -14,8 +19,6 @@
 }
 
 .langLogo {
-    max-width: 90px;
-    max-height: 90px;
-    min-width: 60px;
-    min-height: 60px;
+    width: 90px;
+    height: 90px;
 }

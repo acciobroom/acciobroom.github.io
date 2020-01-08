@@ -16,33 +16,33 @@ import {tableauLang} from './Project-Consts';
 
 function Highlight(props) {
     let highLogo;
-    if (props.value == 1) {
+    if (props.value === 1) {
         highLogo = lang1Logo;
-    } else  if (props.value == 2) { 
+    } else  if (props.value === 2) {
         highLogo = lang2Logo;
-    } else if (props.value == 3) {
+    } else if (props.value === 3) {
         highLogo = lang3Logo;
-    } else if (props.value == 4) {
+    } else if (props.value === 4) {
         highLogo = lang4Logo;
     } else {
         highLogo = lang5Logo;
     }
     return(
         <div>
-          <img class="langLogo" src={highLogo} alt="Language Logo"></img>
+          <img className="langLogo" src={highLogo} alt="Language Logo"/>
         </div>
     );
 }
 
 function Listing(props) {
     let lang;
-    if (props.value == 1) {
+    if (props.value === 1) {
         lang = rLang;
-    } else  if (props.value == 2) {
+    } else  if (props.value === 2) {
         lang = pythonLang;
-    } else if (props.value == 3) {
+    } else if (props.value === 3) {
         lang = mysqlLang;
-    } else if (props.value == 4) {
+    } else if (props.value === 4) {
         lang = sasLang;
     } else {
         lang = tableauLang;
@@ -72,37 +72,37 @@ class Projects extends Component {
     render() {
         return (
             <div>
-              <div class="container">
-                  <div class="row">
-                      <div class="col-3"><Highlight value={this.state.value}/></div>
-                      <div class="col-6"><Listing value={this.state.value}/></div>
-                  </div>
-                  <div class="row">
-                      <div class="col">
+                <div className="highlight">
+                    <div className="col-3"><Highlight value={this.state.value}/></div>
+                    <div className="col-6"><Listing value={this.state.value}/></div>
+                </div>
+                <div className="container">
+                  <div className="row">
+                      <div className="col">
                         <button onClick={() => this.setState({value: 1})}>
-                            <img class="langLogo" src={lang1Logo} alt="R Logo"></img>
+                            <img className="langLogo" src={lang1Logo} alt="R Logo"/>
                         </button>
                       </div>
-                      <div class="col">
+                      <div className="col">
                         <button onClick={() => this.setState({value: 2})}>
-                            <img class="langLogo" src={lang2Logo} alt="Python Logo"></img>
+                            <img className="langLogo" src={lang2Logo} alt="Python Logo"/>
                         </button>
                         </div>
                   </div>
-                  <div class="row">
-                    <div class="col">
+                  <div className="row">
+                    <div className="col">
                         <button onClick={() => this.setState({value: 3})}>
-                            <img class="langLogo" src={lang3Logo} alt="mySQL Logo"></img>
+                            <img className="langLogo" src={lang3Logo} alt="mySQL Logo"/>
                         </button>
                     </div>
-                    <div class="col">
+                    <div className="col">
                         <button onClick={() => this.setState({value: 4})}>
-                            <img class="langLogo" src={lang4Logo} alt="SAS Logo"></img>
+                            <img className="langLogo" src={lang4Logo} alt="SAS Logo"/>
                         </button>
                     </div>
-                        <div class="col">
+                        <div className="col">
                             <button onClick={() => this.setState({ value: 5 })}>
-                                <img class="langLogo" src={lang5Logo} alt="Tableau Logo"></img>
+                                <img className="langLogo" src={lang5Logo} alt="Tableau Logo"/>
                             </button>
                         </div>
                   </div>

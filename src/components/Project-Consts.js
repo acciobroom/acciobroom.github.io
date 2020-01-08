@@ -1,3 +1,11 @@
+/* Use the below code a template for adding additional entries.
+    {
+        link: 'https://www.github.com',
+        desc: "GitHub"
+    }
+ */
+
+// Entries for the R language
 export const rLang = [
     {
         link: 'https://www.google.com',
@@ -6,15 +14,26 @@ export const rLang = [
     {
         link: 'https://www.github.com',
         desc: "Kool-aid"
+    },
+    {
+        link: 'https://www.github.com',
+        desc: "GitHub"
+    },
+    {
+        link: 'https://www.github.com',
+        desc: "GitHub"
     }
 ];
 
+// Entries for the SAS Language
 export const sasLang = [
     {
         link: 'httpd://www.sas.com',
         desc: 'sas description'
     }
 ];
+
+// Entries for the Python Language
 export const pythonLang = [
     {
         link: 'https://www.python.org',
@@ -25,6 +44,8 @@ export const pythonLang = [
         desc: 'python desc 2'
     }
 ];
+
+// Entries for the mySQL Language
 export const mysqlLang = [
     {
         link: 'sql link 1',
@@ -36,6 +57,7 @@ export const mysqlLang = [
     }
 ];
 
+// Entries for the Tableau Language
 export const tableauLang = [
     {
         link: 'tab link 1',
