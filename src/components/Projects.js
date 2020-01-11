@@ -11,15 +11,22 @@ import {sasLang} from './Project-Consts';
 import {mysqlLang} from './Project-Consts';
 import {pythonLang} from './Project-Consts';
 import {tableauLang} from './Project-Consts';
-
+var visSwitch = "hidden";
+var highlightVisibility = {
+  visibility: visSwitch,
+};
 
 
 function Highlight(props) {
     let highLogo;
     if (props.value === 1) {
         highLogo = lang1Logo;
+        visSwitch = "visible";
     } else  if (props.value === 2) {
         highLogo = lang2Logo;
+        visSwitch = "visible";
+        console.log(visSwitch);
+        console.log(highlightVisibility);
     } else if (props.value === 3) {
         highLogo = lang3Logo;
     } else if (props.value === 4) {
@@ -108,7 +115,7 @@ class Projects extends Component {
 
                   </div>
               </div>
-              <div className="highlight resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+              <div style={highlightVisibility} className="highlight resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div className="col-3"><Highlight value={this.state.value}/></div>
                 <div className="col-6"><Listing value={this.state.value}/></div>
               </div>

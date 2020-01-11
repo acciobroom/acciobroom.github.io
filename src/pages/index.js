@@ -32,7 +32,7 @@ const IndexPage = () => (
               const { icon, url } = social;
               return (
                 <a key={url} href={url}>
-                  <i className={`fab ${icon}`}></i>
+                  <i className={`fab ${icon}`}/>
                 </a>
               );
             })}
