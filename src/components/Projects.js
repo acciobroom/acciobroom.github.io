@@ -24,6 +24,7 @@ function Highlight(props) {
         visSwitch = "visible";
     } else  if (props.value === 2) {
         highLogo = lang2Logo;
+        console.log(visSwitch);
         visSwitch = "visible";
         console.log(visSwitch);
         console.log(highlightVisibility);
@@ -60,7 +61,7 @@ function Listing(props) {
         <ul>
             {lang.map((value, index) => {
                 return <div>
-                <li key={index}><a href={value.link} target="_blank">{value.desc}</a></li>
+                <li key={value.id}><a href={value.link} target="_blank">{value.desc}</a></li>
                 </div>
             })}
         </ul>
