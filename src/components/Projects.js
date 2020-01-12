@@ -55,7 +55,7 @@ function Listing(props) {
         <ul>
             {lang.map((value, index) => {
                 return <div>
-                <li key={value.id}><a href={value.link} target="_blank">{value.desc}</a></li>
+                <li key={value.id}><a href={value.link} target="_blank" rel="noopener noreferrer">{value.desc}</a></li>
                 </div>
             })}
         </ul>
