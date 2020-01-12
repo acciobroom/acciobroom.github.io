@@ -11,23 +11,14 @@ import {sasLang} from './Project-Consts';
 import {mysqlLang} from './Project-Consts';
 import {pythonLang} from './Project-Consts';
 import {tableauLang} from './Project-Consts';
-var visSwitch = "hidden";
-var highlightVisibility = {
-  visibility: visSwitch,
-};
 
 
 function Highlight(props) {
     let highLogo;
     if (props.value === 1) {
         highLogo = lang1Logo;
-        visSwitch = "visible";
     } else  if (props.value === 2) {
-        highLogo = lang2Logo;
-        console.log(visSwitch);
-        visSwitch = "visible";
-        console.log(visSwitch);
-        console.log(highlightVisibility);
+        highLogo = lang2Logo
     } else if (props.value === 3) {
         highLogo = lang3Logo;
     } else if (props.value === 4) {
@@ -37,6 +28,7 @@ function Highlight(props) {
     }
     return(
         <div>
+          <i className="fas fa-window-close"></i>
           <img className="langLogo" src={highLogo} alt="Language Logo"/>
         </div>
     );
@@ -56,6 +48,8 @@ function Listing(props) {
         lang = tableauLang;
     }
 
+
+
     return (
         <div>
         <ul>
@@ -73,6 +67,7 @@ class Projects extends Component {
         super(props);
         this.state = {
             value: 0,
+            visibility: false,
         };
     }
 
@@ -87,27 +82,27 @@ class Projects extends Component {
                 <div className="container d-flex flex-wrap">
                   <div className="row no-gutters">
                       <div className="col px-4 m-2">
-                        <button onClick={() => this.setState({value: 1})}>
+                        <button onClick={() => this.setState({value: 1,visibility: true})}>
                             <img className="langLogo" src={lang1Logo} alt="R Logo"/>
                         </button>
                       </div>
                       <div className="col px-4 m-2">
-                        <button onClick={() => this.setState({value: 2})}>
+                        <button onClick={() => this.setState({value: 2,visibility: true})}>
                             <img className="langLogo" src={lang2Logo} alt="Python Logo"/>
                         </button>
                         </div>
                     <div className="col px-4 m-2">
-                      <button onClick={() => this.setState({value: 3})}>
+                      <button onClick={() => this.setState({value: 3,visibility: true})}>
                         <img className="langLogo" src={lang3Logo} alt="mySQL Logo"/>
                       </button>
                     </div>
                     <div className="col px-4 m-2">
-                      <button onClick={() => this.setState({value: 4})}>
+                      <button onClick={() => this.setState({value: 4,visibility: true})}>
                         <img className="langLogo" src={lang4Logo} alt="SAS Logo"/>
                       </button>
                     </div>
                     <div className="col px-4 m-2 ">
-                      <button onClick={() => this.setState({ value: 5 })}>
+                      <button onClick={() => this.setState({ value: 5,visibility: true})}>
                         <img className="langLogo" src={lang5Logo} alt="Tableau Logo"/>
                       </button>
                     </div>
@@ -116,9 +111,13 @@ class Projects extends Component {
 
                   </div>
               </div>
-              <div style={highlightVisibility} className="highlight resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div className="col-3"><Highlight value={this.state.value}/></div>
-                <div className="col-6"><Listing value={this.state.value}/></div>
+              <div className="highlight resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+                <div className="col-3">
+                  {this.state.visibility ? <Highlight value={this.state.value}/> : null}
+                </div>
+                <div className="col-6">
+                  {this.state.visibility ? <Listing value={this.state.value}/> : null}
+                </div>
               </div>
             </div>
           </section>
