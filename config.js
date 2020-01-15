@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: 'Gatsby Starter Resume', // <title>
+  siteTitle: 'Acciobroomstick Profile', // <title>
   manifestName: 'Resume',
   manifestShortName: 'Landing', // max 12 characters
   manifestStartUrl: '/',
@@ -7,7 +7,7 @@ module.exports = {
   manifestThemeColor: '#663399',
   manifestDisplay: 'standalone',
   manifestIcon: 'src/assets/img/website-icon.png',
-  pathPrefix: `/gatsby-starter-resume/`, // This path is subpath of your hosting https://domain/portfolio
+  pathPrefix: `/`, // This path is subpath of your hosting https://domain/portfolio
   firstName: 'Tsungai',
   lastName: 'Chibanga',
   // social
