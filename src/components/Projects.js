@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../assets/sass/Projects.scss';
 // import '../assets/sass/bootstrap/bootstrap-grid.css';
 import lang1Logo from '../assets/images/Rlogo.svg';
-import lang2Logo from '../assets/images/Python-logo.svg';
+import lang2Logo from '../assets/images/Python-Logo.png';
 import lang3Logo from '../assets/images/mysql-logo.png';
 import lang4Logo from '../assets/images/SAS_logo.svg';
 import lang5Logo from '../assets/images/tableau-logo.png';
