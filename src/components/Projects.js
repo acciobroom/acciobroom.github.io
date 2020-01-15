@@ -82,27 +82,27 @@ class Projects extends Component {
                 <div className="container d-flex flex-wrap">
                   <div className="row no-gutters">
                       <div className="col px-4 m-2">
-                        <button onClick={() => this.setState({value: 1,visibility: true})}>
+                        <button onClick={() => this.setState({value: 1,visibility: false})}>
                             <img className="langLogo" src={lang1Logo} alt="R Logo"/>
                         </button>
                       </div>
                       <div className="col px-4 m-2">
-                        <button onClick={() => this.setState({value: 2,visibility: true})}>
+                        <button onClick={() => this.setState({value: 2,visibility: false})}>
                             <img className="langLogo" src={lang2Logo} alt="Python Logo"/>
                         </button>
                         </div>
                     <div className="col px-4 m-2">
-                      <button onClick={() => this.setState({value: 3,visibility: true})}>
+                      <button onClick={() => this.setState({value: 3,visibility: false})}>
                         <img className="langLogo" src={lang3Logo} alt="mySQL Logo"/>
                       </button>
                     </div>
                     <div className="col px-4 m-2">
-                      <button onClick={() => this.setState({value: 4,visibility: true})}>
+                      <button onClick={() => this.setState({value: 4,visibility: false})}>
                         <img className="langLogo" src={lang4Logo} alt="SAS Logo"/>
                       </button>
                     </div>
                     <div className="col px-4 m-2 ">
-                      <button onClick={() => this.setState({ value: 5,visibility: true})}>
+                      <button onClick={() => this.setState({ value: 5,visibility: false})}>
                         <img className="langLogo" src={lang5Logo} alt="Tableau Logo"/>
                       </button>
                     </div>
