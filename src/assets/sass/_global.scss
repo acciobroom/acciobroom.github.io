@@ -1,5 +1,15 @@
 // Global styling for this template
 
+#awards {
+  h4 {
+    margin-bottom: 0px;
+  }
+  h5 {
+
+    font-weight: normal;
+  }
+}
+
 body {
   @include body-font;
   padding-top: 54px;

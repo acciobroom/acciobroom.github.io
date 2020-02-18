@@ -6,10 +6,13 @@ import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import config from '../../config';
 import Projects from '../components/Projects';
+import LatexViewer from '../components/latex';
+
+
 
 const IndexPage = () => (
   <Layout>
-    <Sidebar />
+    <Sidebar/>
     <div className="container-fluid p-0">
       <section
         className="resume-section p-3 p-lg-5 d-flex align-items-center"
@@ -21,7 +24,7 @@ const IndexPage = () => (
             <span className="text-primary">{config.lastName}</span>
           </h1>
           <div className="subheading mb-5">
-            {config.address} · 
+            {config.address} ·
             <a href={`mailto:${config.email}`}>{config.email}</a>
           </div>
           <p className="lead mb-5">
@@ -31,7 +34,7 @@ const IndexPage = () => (
             {config.socialLinks.map(social => {
               const { icon, url } = social;
               return (
-                <a key={url} href={url}>
+                <a key={url} href={url} target="_blank" rel="noopener noreferrer">
                   <i className={`fab ${icon}`}/>
                 </a>
               );
@@ -40,18 +43,14 @@ const IndexPage = () => (
         </div>
       </section>
 
-      <hr className="m-0" />
+      <hr className="m-0"/>
 
-      <section id="experience">
-        <Projects />
-      </section>
-            {/*}
       <section
         className="resume-section p-3 p-lg-5 d-flex justify-content-center"
         id="experience">
         <div className="w-100">
           <h2 className="mb-5">Experience</h2>
-
+          {/*}
           <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
             <div className="resume-content">
               <h3 className="mb-0">Senior Web Developer</h3>
@@ -72,58 +71,14 @@ const IndexPage = () => (
 
           <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
             <div className="resume-content">
-              <h3 className="mb-0">Web Developer</h3>
-              <div className="subheading mb-3">Intelitec Solutions</div>
-              <p>
-                Capitalize on low hanging fruit to identify a ballpark value
-                added activity to beta test. Override the digital divide with
-                additional clickthroughs from DevOps. Nanotechnology immersion
-                along the information highway will close the loop on focusing
-                solely on the bottom line.
-              </p>
-            </div>
-            <div className="resume-date text-md-right">
-              <span className="text-primary">December 2011 - March 2013</span>
             </div>
           </div>
-
-          <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div className="resume-content">
-              <h3 className="mb-0">Junior Web Designer</h3>
-              <div className="subheading mb-3">Shout! Media Productions</div>
-              <p>
-                Podcasting operational change management inside of workflows to
-                establish a framework. Taking seamless key performance
-                indicators offline to maximise the long tail. Keeping your eye
-                on the ball while performing a deep dive on the start-up
-                mentality to derive convergence on cross-platform integration.
-              </p>
-            </div>
-            <div className="resume-date text-md-right">
-              <span className="text-primary">July 2010 - December 2011</span>
-            </div>
-          </div>
-
-          <div className="resume-item d-flex flex-column flex-md-row justify-content-between">
-            <div className="resume-content">
-              <h3 className="mb-0">Web Design Intern</h3>
-              <div className="subheading mb-3">Shout! Media Productions</div>
-              <p>
-                Collaboratively administrate empowered markets via plug-and-play
-                networks. Dynamically procrastinate B2C users after installed
-                base benefits. Dramatically visualize customer directed
-                convergence without revolutionary ROI.
-              </p>
-            </div>
-            <div className="resume-date text-md-right">
-              <span className="text-primary">September 2008 - June 2010</span>
-            </div>
-          </div>
+          {*/}
         </div>
       </section>
-            {*/}
 
-      <hr className="m-0" />
+
+      <hr className="m-0"/>
 
       <section
         className="resume-section p-3 p-lg-5 d-flex align-items-center"
@@ -170,15 +125,16 @@ const IndexPage = () => (
         </div>
       </section>
 
-      <hr className="m-0" />
+      <hr className="m-0"/>
 
-            {/*}
+
       <section
         className="resume-section p-3 p-lg-5 d-flex align-items-center"
         id="skills">
         <div className="w-100">
           <h2 className="mb-5">Skills</h2>
-
+          <Projects />
+          {/*}
           <div className="subheading mb-3">
             Programming Languages &amp; Tools
           </div>
@@ -240,10 +196,11 @@ const IndexPage = () => (
               Agile Development &amp; Scrum
             </li>
           </ul>
+          {*/}
         </div>
       </section>
-            {*/}
-      <hr className="m-0" />
+
+      <hr className="m-0"/>
 
       <section
         className="resume-section p-3 p-lg-5 d-flex align-items-center"
@@ -260,9 +217,8 @@ const IndexPage = () => (
         </div>
       </section>
 
-      <hr className="m-0" />
-
-{/*}      <section
+      <hr className="m-0"/>
+          <section
         className="resume-section p-3 p-lg-5 d-flex align-items-center"
         id="awards">
          <div className="w-100">
@@ -270,38 +226,31 @@ const IndexPage = () => (
           <ul className="fa-ul mb-0">
             <li>
               <i className="fa-li fa fa-trophy text-warning"></i>
-              Google Analytics Certified Developer
+              <h4>ORC Doctoral Fellowship</h4>
+               <h5>Aug 2018 {'\u22C5'} University of Central Florida</h5>
+              <p>Nominated by the Department of Statistics for this fellowship. Only one awarded per year.</p>
             </li>
             <li>
               <i className="fa-li fa fa-trophy text-warning"></i>
-              Mobile Web Specialist - Google Certification
+              <h4>Duane E. Anderson Graduate Fellowship</h4>
+              <h5>May 2015 {'\u22C5'}  Department of Mathematics, University of Minnesota Duluth</h5>
+              <p>The award is to recruit women and minority students who have demonstrated academic merit to the study of mathematics and its applications.</p>
             </li>
             <li>
-              <i className="fa-li fa fa-trophy text-warning"></i>1<sup>st</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition
-              2009
+              <i className="fa-li fa fa-trophy text-warning"></i>
+              <h4>Lynn Briggs Summer Research Award</h4>
+              <h5>May 2012 {'\u22C5'} Lyman Briggs College, Michigan State University</h5>
+              <p>One of three students to receive the $3000 research award.</p>
             </li>
             <li>
-              <i className="fa-li fa fa-trophy text-warning"></i>1<sup>st</sup>
-              Place - University of Colorado Boulder - Adobe Creative Jam 2008
-              (UI Design Category)
-            </li>
-            <li>
-              <i className="fa-li fa fa-trophy text-warning"></i>2<sup>nd</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition
-              2008
-            </li>
-            <li>
-              <i className="fa-li fa fa-trophy text-warning"></i>1<sup>st</sup>
-              Place - James Buchanan High School - Hackathon 2006
-            </li>
-            <li>
-              <i className="fa-li fa fa-trophy text-warning"></i>3<sup>rd</sup>
-              Place - James Buchanan High School - Hackathon 2005
+              <i className="fa-li fa fa-trophy text-warning"></i>
+              <h4>Dr Ronald C. Hamelink Scholarship in Mathematics</h4>
+              <h5>Aug 2011 {'\u22C5'} Lyman Briggs College, Michigan State University</h5>
+              <p>Recipients are selected on the basis of previous academic achievement and professional goals.</p>
             </li>
           </ul>
         </div> 
-      </section> {*/}
+      </section>
     </div>
   </Layout>
 );

@@ -1,0 +1,415 @@
+%=======================02-713 LaTeX template, following the 15-210 template==================
+%
+% You don't need to use LaTeX or this template, but you must turn your homework in as
+% a typeset PDF somehow.
+%
+% How to use:
+%    1. Update your information in section "A" below
+%    2. Write your answers in section "B" below. Precede answers for all 
+%       parts of a question with the command "\question{n}{desc}" where n is
+%       the question number and "desc" is a short, one-line description of 
+%       the problem. There is no need to restate the problem.
+%    3. If a question has multiple parts, precede the answer to part x with the
+%       command "\part{x}".
+%    4. If a problem asks you to design an algorithm, use the commands
+%       \algorithm, \correctness, \runtime to precede your discussion of the 
+%       description of the algorithm, its correctness, and its running time, respectively.
+%    5. You can include graphics by using the command \includegraphics{FILENAME}
+%
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\setlength{\headheight}{13.6pt}
+\newcommand\question[2]{\vspace{.25in}\hrule\textbf{#1: #2}\vspace{.5em}\hrule\vspace{.10in}}
+\renewcommand\part[1]{\vspace{.10in}\textbf{(#1)}}
+\newcommand\algorithm{\vspace{.10in}\textbf{Algorithm: }}
+\newcommand\correctness{\vspace{.10in}\textbf{Correctness: }}
+\newcommand\runtime{\vspace{.10in}\textbf{Running time: }}
+\pagestyle{fancyplain}
+\lhead{\textbf{\NAME}}
+\chead{\textbf{Assignment \HWNUM}}
+\rhead{CAP 5610  -- \today}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+
+
+\begin{document}\raggedright
+		\lstset{language=Python}  
+	
+	
+%Section A==============Change the values below to match your information==================
+\newcommand\NAME{Tsungai Chibanga}  % your name
+\newcommand\HWNUM{1}              % the homework number
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\question{1}{Classify the following attributes as binary, discrete, or continuous.  Further classify the attributes as nominal, ordinal, interval, ratio.} 
+
+
+\part{a} \textbf{Rating of an Amazon product by a person on a scale of 1 to 5} 
+
+Ordinal
+
+\part{b} \textbf{The Internet Speed}
+
+Ratio
+
+
+\part{c} \textbf{Number of customers in a store.} 
+
+Ratio
+
+\part{d} \textbf{Your Student ID}
+
+Nominal
+
+\part{e} \textbf{Distance }
+
+Ratio
+
+
+\part{f} \textbf{Your letter grade (A, B, C, D)}
+
+Ordinal
+
+\part{g} \textbf{The temperature in the campus}
+
+Interval
+
+
+
+
+\question{2}{Distance/Similarity Measures} 
+\part{a} \textbf{Which proximity measure would you use to group the boxes based on their shapes(length-width ratio)? Justify your answer.}
+
+
+We would use correlation to group the boxes based on their shapes.
+
+The $1 \times 2$ box is most similar to the $3 \times 6$ since the bigger box is 3 times the length-width of the smaller box.
+
+The $1 \times 1$ box is most similar to the $3 \times 3$ since the bigger box is 3 times the length-width of the smaller box.
+
+
+\part{b} \textbf{Which proximity measure would you use to group the boxes based on their size? Justify your answer.}
+
+We would use the Euclidean distance to group the boxes by size.
+
+The $1 \times 1$ has an area of 1 which is very close to the area of the $1 \times 2$ box which is 2.
+
+The $3 \times 3$ has an area of 9 which can be grouped with the area of the $3 \times 6$ box which is 18.
+
+
+\question{3}{Data Pre-processing of Titanic–Part 1} 
+
+\part{a} \textbf{Which features are available in the dataset?}
+
+PassengerId,   
+Survived,         
+Pclass,           
+Name,           
+Sex,             
+Age,            
+SibSp,         
+Parch,          
+Ticket,         
+Fare,           
+Cabin,           
+Embarked        
+
+\part{b} \textbf{Which features are categorical?}
+
+Name,            
+Sex,                            
+Embarked        
+
+\part{c} \textbf{Which features are numerical?}
+
+PassengerId,      
+Survived,         
+Pclass,           
+Age,            
+SibSp,            
+Parch,            
+Fare           
+
+\part{d} \textbf{Which features are mixed data types?}
+
+Cabin, 
+Ticket
+
+
+
+\part{e} \textbf{Which features contain blank, null or empty values?}
+
+In the training dataset: Age and Cabin
+
+In the test dataset: Age and Cabin
+
+
+\part{f} \textbf{What are the data types(e.g., integer, floats or strings) for various features?}
+
+\begin{verbatim}
+PassengerId      int64
+Survived         int64
+Pclass           int64
+Name            object (string)
+Sex             object (string)
+Age            float64
+SibSp            int64
+Parch            int64
+Ticket          object (mixed)
+Fare           float64
+Cabin           object (mixed)
+Embarked        object (string)
+\end{verbatim}
+
+
+\part{g} \textbf{To understand what is the distribution of numerical feature values across the samples, please list the properties (count, mean, std, min, 25\% percentile, 50\% percentile, 75\% percentile, max) of numerical features}?
+
+For the training set we have the following:
+
+\begin{verbatim}
+       PassengerId    Survived      Pclass         Age       SibSp  
+count   891.000000  891.000000  891.000000  714.000000  891.000000   
+mean    446.000000    0.383838    2.308642   29.699118    0.523008   
+std     257.353842    0.486592    0.836071   14.526497    1.102743   
+min       1.000000    0.000000    1.000000    0.420000    0.000000   
+25%     223.500000    0.000000    2.000000   20.125000    0.000000   
+50%     446.000000    0.000000    3.000000   28.000000    0.000000   
+75%     668.500000    1.000000    3.000000   38.000000    1.000000   
+max     891.000000    1.000000    3.000000   80.000000    8.000000   
+
+            Parch        Fare  
+count  891.000000  891.000000  
+mean     0.381594   32.204208  
+std      0.806057   49.693429  
+min      0.000000    0.000000  
+25%      0.000000    7.910400  
+50%      0.000000   14.454200  
+75%      0.000000   31.000000  
+max      6.000000  512.329200  
+\end{verbatim}
+
+For the test set we have the following:
+
+\begin{verbatim}
+       PassengerId      Pclass         Age       SibSp       Parch        Fare
+count   418.000000  418.000000  332.000000  418.000000  418.000000  417.000000
+mean   1100.500000    2.265550   30.272590    0.447368    0.392344   35.627188
+std     120.810458    0.841838   14.181209    0.896760    0.981429   55.907576
+min     892.000000    1.000000    0.170000    0.000000    0.000000    0.000000
+25%     996.250000    1.000000   21.000000    0.000000    0.000000    7.895800
+50%    1100.500000    3.000000   27.000000    0.000000    0.000000   14.454200
+75%    1204.750000    3.000000   39.000000    1.000000    0.000000   31.500000
+max    1309.000000    3.000000   76.000000    8.000000    9.000000  512.329200
+\end{verbatim}
+
+
+\part{h} \textbf{To understand what is the distribution of categorical features, we define:  count is the total number of categorical values per column; unique is the total number of unique categorical values per column; top is the most frequent categorical value; freq is the total number of the most frequent categorical value. Pleaselistthe properties (count, unique, top, freq) of categorical features? }
+
+For the training set we have the following:
+
+\begin{verbatim}
+male      577
+female    314
+Name: Sex, dtype: int64
+
+
+S    644
+C    168
+Q     77
+Name: Embarked, dtype: int64
+
+
+1601                7
+347082              7
+CA. 2343            7
+CA 2144             6
+3101295             6
+..
+STON/O2. 3101271    1
+8475                1
+350035              1
+349213              1
+315097              1
+Name: Ticket, Length: 681, dtype: int64
+
+
+Vovk, Mr. Janko                            1
+Lindblom, Miss. Augusta Charlotta          1
+Sandstrom, Miss. Marguerite Rut            1
+Stankovic, Mr. Ivan                        1
+Ling, Mr. Lee                              1
+..
+Ohman, Miss. Velin                         1
+Myhrman, Mr. Pehr Fabian Oliver Malkolm    1
+Bracken, Mr. James H                       1
+Beesley, Mr. Lawrence                      1
+Herman, Miss. Alice                        1
+Name: Name, Length: 891, dtype: int64
+
+
+B96 B98        4
+C23 C25 C27    4
+G6             4
+C22 C26        3
+F2             3
+..
+B79            1
+C118           1
+C110           1
+C62 C64        1
+C91            1
+Name: Cabin, Length: 147, dtype: int64
+
+\end{verbatim}
+
+
+For the testing dataset we have 
+
+\begin{verbatim}
+male      266
+female    152
+Name: Sex, dtype: int64
+
+
+S    270
+C    102
+Q     46
+Name: Embarked, dtype: int64
+
+
+PC 17608      5
+113503        4
+CA. 2343      4
+347077        3
+C.A. 31029    3
+..
+17463         1
+349235        1
+32302         1
+228414        1
+315152        1
+Name: Ticket, Length: 363, dtype: int64
+
+
+Khalil, Mrs. Betros (Zahie Maria" Elias)"    1
+Bird, Miss. Ellen                            1
+Nilsson, Miss. Berta Olivia                  1
+Keane, Mr. Daniel                            1
+Shine, Miss. Ellen Natalia                   1
+..
+Khalil, Mr. Betros                           1
+Bowen, Miss. Grace Scott                     1
+Gilbert, Mr. William                         1
+McGowan, Miss. Katherine                     1
+Reynolds, Mr. Harold J                       1
+Name: Name, Length: 418, dtype: int64
+
+
+B57 B59 B63 B66    3
+C116               2
+C78                2
+C6                 2
+C101               2
+..
+C46                1
+C32                1
+D43                1
+D21                1
+D37                1
+Name: Cabin, Length: 76, dtype: int64
+
+\end{verbatim}
+
+\clearpage
+
+Code used for the homework
+
+
+
+\begin{lstlisting}
+import pandas as pd
+
+pd.set_option('display.max_columns', 500)
+
+
+train_df = pd.read_csv("./train.csv")
+test_df = pd.read_csv("./test.csv")
+
+combine = [train_df, test_df]
+
+numerics = ['int16', 'int32', 'int64', 'float16', 'float32', 'float64']
+numdf = train_df.select_dtypes(include=numerics)
+nonNumdf = train_df.select_dtypes(exclude=numerics)
+
+nonNumt = test_df.select_dtypes(exclude=numerics)
+
+
+# nonNumdf =nonNumdf.drop(columns=['Name', 'Ticket'])
+
+def nullFinder(df):
+return df.isnull().sum()
+
+def colTypes(df):
+return df.dtypes
+
+def sumStats(df):
+return df.describe()
+
+nullfind = map(nullFinder, combine)
+columnTypes = map(colTypes, combine)
+summaryStats = map(sumStats,combine)
+print(list(nullfind))
+print(*list(columnTypes), sep='\n')
+print(*list(summaryStats), sep='\n')
+
+nonNumdf['Sex'].value_counts()
+nonNumdf.apply(pd.Series.value_counts)
+\end{lstlisting}
+\end{document}
